@@ -7,13 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if user_signed_in? %>
-  <%= link_to "#{current_user.username} (#{current_user.provider})", current_user.url %>
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-  <% else %>
-<%= link_to "Sign in with Vkontakte", user_omniauth_authorize_path(:vkontakte) %>
-<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+
+     <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="brand" href="index.html">Planner</a>
+            <div class="nav-collapse">
+              <ul class="nav">
+                  <% if user_signed_in? %>
+                  <li><%= image_tag current_user.image_url %></li>
+                  <li><%= link_to "#{current_user.username} (#{current_user.provider})", current_user.url %></li>
+                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+                  <% else %>
+                  <li><%= link_to "Sign in with Vkontakte", user_omniauth_authorize_path(:vkontakte) %></li>
+                  <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
+                <% end %>
+              </ul>
+            </div>
+           </div>
+        </div>
+      </div>
+<% [:notice, :error, :alert, :success].each do |level| %>
+  <% unless flash[level].blank? %>
+    <div class="<%= flash_class(level) %>">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= content_tag :span, flash[level] %>
+    </div>
+  <% end %>
 <% end %>
+
 <%= yield %>
 
 </body>

@@ -1,26 +1,22 @@
 Organizer::Application.routes.draw do
 
-  resources :tasks
+  get "page/index"
 
-
-  resources :lists
-
-
-  resources :groups
-
-
+  resources :categories do
+    resources :notes
+  end
   resources :events
-
-
-  resources :notes
-
-
-  resources :categories
-
+  resources :groups do
+    resources :lists do
+      resources :tasks
+    end
+  end
 
   devise_for :users, :controllers => {:omniauth_callbacks => 'users/omniauth_callbacks'}
 
-  resources :users
+  resources :users do
+    get 'main', :on => :collection, :as => :main
+  end
 
-  root :to => 'users#index'
+  root :to => 'users#main'
 end

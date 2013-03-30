@@ -8,6 +8,63 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require bootstrap
  *= require_self
  *= require_tree .
  */
+html, body{
+  margin:0;
+  padding:0;
+    width:100%;
+    height:100%;
+    font-family:Helvetica, Arial, sans-serif;
+    background: url('/assets/images.PNG');
+}
+#login{
+    background:rgba(244, 240, 240, 0.7);
+    border:1px solid #d4cece;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    margin:50px;
+    margin-top:10px;
+    float:right;
+    min-width:300px;
+    padding:10px;
+}
+#login ul{
+    list-style:none;
+}
+.navbar-inner{
+    background:rgb(244, 240, 240);
+}
+.span4{
+    background:rgba(244, 240, 240, 0.5);
+
+}
+.span4 p{
+    padding:50px;
+    padding-bottom:0;
+    text-align:center;
+}
+.span4 h2{
+    text-align:center;
+}
+.span4 img{
+    height:220px;
+}
+.nav li{
+    display:block;
+    float:none;
+    padding:10px 10px 10px;
+    color:#777;
+    text-decoration:none;
+    text-shadow:0 1px 0 #fff;
+    color:#999;
+    text-shadow:0 -1px 0 rgba(0,0,0,0.25)
+}
+.nav li img{
+    max-height:35px;
+    margin-top:-5px;
+
+}

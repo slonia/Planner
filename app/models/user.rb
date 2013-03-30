@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
         :url => access_token.info.urls.Facebook,
         :username => access_token.extra.raw_info.name,
         :nickname => access_token.extra.raw_info.username,
+        :image_url => access_token.info.image,
         :email => access_token.extra.raw_info.email,
         :password => Devise.friendly_token[0,20])
     end
@@ -33,7 +34,8 @@ class User < ActiveRecord::Base
         :url => access_token.info.urls.Vkontakte,
         :username => access_token.info.name,
         :nickname => access_token.extra.raw_info.domain,
-        :email => access_token.extra.raw_info.domain+'@vk.com',
+        :image_url => access_token.extra.raw_info.photo,
+        :email => access_token.extra.raw_info.screen_name+'@vk.com',
         :password => Devise.friendly_token[0,20])
     end
   end
