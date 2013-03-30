@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  place: MyString
+  started_at: 2013-03-30 15:20:04
+  finished_at: 2013-03-30 15:20:04
+  repeat: MyString
+  user_id: 1
+
+two:
+  title: MyString
+  description: MyText
+  place: MyString
+  started_at: 2013-03-30 15:20:04
+  finished_at: 2013-03-30 15:20:04
+  repeat: MyString
+  user_id: 1
