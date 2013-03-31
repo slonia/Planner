@@ -29,6 +29,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.js
       format.json { render json: @event }
     end
   end
@@ -43,9 +44,11 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
 
+    @date = @event.started_at
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        @events = Event.all
+        format.js
         format.json { render json: @event, status: :created, location: @event }
       else
         format.html { render action: "new" }

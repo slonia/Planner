@@ -25,7 +25,3 @@ function tog(obj, id)
   $('div[id^=edit_'+obj+']').hide();
   $('div[id^=edit_'+obj+'_'+id+']').show();
 }
-$(function() {
-  $("#datetimepicker1").datetimepicker();
-  $("#datetimepicker2").datetimepicker();
-});
