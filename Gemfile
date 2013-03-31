@@ -26,6 +26,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'nested_form'
 gem "watu_table_builder", :require => "table_builder"
+gem 'enumerize'
 
 gem 'devise'
 gem 'omniauth'

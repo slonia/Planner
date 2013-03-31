@@ -17,7 +17,7 @@
       <%=h @date.strftime("%B %Y") %>
       <%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m") %>
     </h2>
-  <%= calendar_for @events, :year => @date.year, :month => @date.month, :first_day_of_week => 1 do |calendar| %>
+  <%= calendar_for @events, :year => @date.year, :month => @date.month, :first_day_of_week => 1, html: {class: 'table table-bordered'} do |calendar| %>
     <%= calendar.head('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday') %>
     <% calendar.day(:day_method => :started_at) do |date, events| %>
       <%= date.day %>

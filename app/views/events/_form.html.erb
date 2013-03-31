@@ -2,9 +2,9 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :place %>
-  <%= f.input :started_at %>
-  <%= f.input :finished_at %>
-  <%= f.input :repeat %>
+  <%= f.text_field :started_at %>
+  <%= f.text_field :finished_at %>
+  <%= f.select :repeat, Event.repeat.options %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.button :submit %>
 <% end %>
