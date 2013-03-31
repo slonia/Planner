@@ -12,51 +12,57 @@
  *= require_self
  *= require_tree .
  */
-html, body{
+html, body
+{
   margin:0;
   padding:0;
     width:100%;
     height:100%;
     font-family:Helvetica, Arial, sans-serif;
-    background: url('/assets/images.PNG');
+    background: url('/assets/images3.PNG');
 }
-#login{
-    background:rgba(244, 240, 240, 0.7);
-    border:1px solid #d4cece;
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    -moz-border-radius:4px;
-    margin:50px;
-    margin-top:10px;
-    float:right;
-    min-width:300px;
-    padding:10px;
-}
-#login ul{
-    list-style:none;
-}
-.navbar-inner{
-    background:rgb(244, 240, 240);
-}
-.span4{
+.color{
     background:rgba(244, 240, 240, 0.5);
-
+    width:30%
 }
-.span4 p{
-    padding:50px;
+.navig{
+    float:left;
+    margin-left:10px;
+    width:17%;
+    min-width:200px;
+}
+.navig_1{
+    float:left;
+    padding-left:10px;
+    padding-right:10px;
+    background:rgba(244, 240, 240, 0.7);
+    border-radius:7px;
+    -webkit-border-radius:7px;
+    -moz-border-radius:7px;
+    margin-left:10px;
+    min-width:200px;
+}
+.navig_1 p{
     padding-bottom:0;
     text-align:center;
 }
-.span4 h2{
+.navig p{
+    padding-bottom:0;
+
+}
+.navig_1 h2{
     text-align:center;
 }
-.span4 img{
+.navig h2{
+    text-align:center;
+}
+.big_img{
     height:220px;
 }
 .nav li{
     display:block;
     float:none;
-    padding:10px 10px 10px;
+    padding-right:5px;
     color:#777;
     text-decoration:none;
     text-shadow:0 1px 0 #fff;
@@ -65,6 +71,178 @@ html, body{
 }
 .nav li img{
     max-height:35px;
-    margin-top:-5px;
+    padding:3px;
+}
+.main{
+    margin:10px;
+}
+.sticker h2, p {
+    font-size: 100%;
+    font-weight: normal;
+}
+.sticker ul {
+    overflow: hidden;
+    padding: 3em;
+}
+.sticker ul li img{
+    margin-bottom:10px;
+    float:right;
+}
+.sticker ul li h2 {
+    font-size: 120%;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.sticker ul li p {
+    font-family: "Reenie Beanie", arial, sans-serif;
+    font-size: 180%;
+}
+.sticker ul li{
+    list-style: none;
+    margin: 1em;
+    float: left;
+    text-decoration: none;
+    color: #000;
+    background: #FFC;
+    display: block;
+    min-height: 10em;
+    max-width: 13em;
+    min-width: 10em;
+    overflow: auto;
+    padding:3px 3px 10px 10px;
+    -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1); /* для Firefox Грозного */
+    -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 7); /* да для люда обычного, праведного */
+    -box-shadow: 5px 5px 7px rgba(33, 33, 33, 7); /* и про Оперушку не забудем */
+}
+.sticker ul li{
+    -webkit-transform: rotate(-6deg);
+    -o-transform: rotate(-6deg);
+    -moz-transform: rotate(-6deg);
+}
+.sticker ul li:nth-child(even) a{
+    -o-transform:rotate(4deg);
+    -webkit-transform:rotate(4deg);
+    -moz-transform:rotate(4deg);
+    position:relative;
+    top:5px;
+}
+.sticker ul li:nth-child(3n){
+    -o-transform:rotate(-3deg);
+    -webkit-transform:rotate(-3deg);
+    -moz-transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+}
+.sticker ul li:nth-child(5n){
+    -o-transform:rotate(5deg);
+    -webkit-transform:rotate(5deg);
+    -moz-transform:rotate(5deg);
+    position:relative;
+    top:-10px;
+}
+.promo{
+    color:#AF0032;
+    font-size:12px;
+    text-align:center;
+    margin-top:20px
+}
+.promo a:link, .promo a:visited, .promo a:hover {
+    color:#0066CC;
+    text-decoration:underline;
+}
+.style_accordion{
+    margin-bottom:10px;
+    background:rgba(244, 240, 240, 0.7);
+    padding-left:10px;
+    padding-right:10px;
+    border-radius:7px;
+    -webkit-border-radius:7px;
+    -moz-border-radius:7px;
+}
+.style_accordion h4{
+    padding-left:15px;
+}
+.float{
+    float:left;
+}
+.group{
+    min-height:100px;
+}
+.groups li{
+    padding-bottom: 3px;
+    list-style:none;
+}
+.groups li a{
+    color:#082f64;
+}
+.main{
+    min-width:100px;
+}
+@media (max-width: 930px){
 
+
+}
+@media (max-width: 930px) and (min-width: 550px){
+  .sticker ul li p{font-size:120%}
+
+}
+@media (max-width: 549px){
+     .sticker ul li p{font-size:90%}
+}
+.delete{
+    float:right;
+}
+.sort{
+    color:#578000;
+    text-align:left;}
+.hiden{
+    list-style:none;
+    color:#578000;
+    padding-left:10px;
+
+}
+.hiden input{
+    margin-bottom:5px;
+}
+.note
+{
+    float: left;
+    width: 200px;
+    background-color: yellow;
+    margin: 5px;
+}
+.note .n_title
+{
+    font-size: 14pt;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-top: 5px;
+    background:rgba(255,255,255, 0.5);
+}
+.note .n_text
+{
+    min-height: 150px;
+}
+.note input, .note textarea
+{
+    background:rgba(255,255,255, 0);
+    border: none;
+    width: 185px;
+}
+.note form
+{
+    text-align: center;
+}
+.note textarea
+{
+    max-height: 200px;
+}
+.calendar
+{
+    background-color: #EEE;
+}
+.calendar td { height: 50px; width: 14.28%; }
+.calendar thead
+{
+    background-color: #c5c5f6;
 }

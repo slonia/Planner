@@ -23,8 +23,9 @@ end
 
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'simple_form'
 gem 'nested_form'
-
+gem "simple_calendar"
 
 gem 'devise'
 gem 'omniauth'

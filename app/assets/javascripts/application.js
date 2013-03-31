@@ -15,3 +15,10 @@
 //= require bootstrap
 //= require jquery_nested_form
 //= require_tree .
+
+
+function tog(obj, id)
+{
+  $('div[id^='+obj+'_'+id+']').hide();
+  $('div[id^=edit_'+obj+'_'+id+']').show();
+}

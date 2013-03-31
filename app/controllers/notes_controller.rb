@@ -44,7 +44,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
+        format.html { redirect_to categories_path, notice: 'Note was successfully created.' }
         format.json { render json: @note, status: :created, location: @note }
       else
         format.html { render action: "new" }
@@ -61,6 +61,7 @@ class NotesController < ApplicationController
     respond_to do |format|
       if @note.update_attributes(params[:note])
         format.html { redirect_to @note, notice: 'Note was successfully updated.' }
+        format.js {render action: "update", id: @note.id}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -73,11 +74,11 @@ class NotesController < ApplicationController
   # DELETE /notes/1.json
   def destroy
     @note = Note.find(params[:id])
+    @category = @note.category_id
     @note.destroy
-
+    @notes = Note.find_all_by_category_id(@category)
     respond_to do |format|
-      format.html { redirect_to notes_url }
-      format.json { head :no_content }
+      format.js { render('/categories/show')}
     end
   end
 end

@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.find_all_by_user_id(current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,9 +14,10 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
     @group = Group.find(params[:id])
-
+    @lists = List.find_all_by_group_id(@group.id)
     respond_to do |format|
       format.html # show.html.erb
+      format.js
       format.json { render json: @group }
     end
   end

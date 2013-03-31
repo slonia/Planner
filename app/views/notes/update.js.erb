@@ -1,0 +1,4 @@
+$("div[id=edit_note_<%= @note.id %>]").hide();
+$("div[id=note_<%= @note.id %>]").children('h2[class=n_title]').html("<%= @note.title %>");
+$("div[id=note_<%= @note.id %>]").children('p[class=n_text]').html("<%= @note.text %>");
+$("div[id=note_<%= @note.id %>]").show();

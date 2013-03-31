@@ -1,29 +1,8 @@
-<%= form_for(@list) do |f| %>
-  <% if @list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
-
-      <ul>
-      <% @list.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :color %><br />
-    <%= f.text_field :color %>
-  </div>
-  <div class="field">
-    <%= f.label :group_id %><br />
-    <%= f.number_field :group_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= simple_nested_form_for @list do |f| %>
+  <%= f.input :title %>
+  <%= f.input :color %>
+  <%= f.select :group_id, options_from_collection_for_select(@groups, 'id', 'title', selected: @list.group_id) %>
+  <%= f.fields_for :tasks %>
+  <%= f.link_to_add "Add image", :notes, class: 'btn btn-info' %>
+  <%= f.button :submit %>
 <% end %>

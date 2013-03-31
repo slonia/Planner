@@ -1,0 +1,5 @@
+ <% name = category.name+' ('+Note.find_all_by_category_id(category.id).count.to_s+')' %>
+
+ <li><%= link_to name, category, remote: true %>
+  <%= link_to '', category, method: :delete, remote: true, class: 'pull-right text-right icon-trash' %></li>
+

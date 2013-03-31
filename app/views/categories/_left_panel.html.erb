@@ -1,0 +1,23 @@
+<div class="style_accordion">
+               <div class="group">
+                <h3><img class="float" src="assets/note.png"> Notes</h3>
+                  <ul class="groups" id="cats">
+                    <%= render @categories %>
+                  </ul>
+                  <p class="sort">sort by <i class="icon-chevron-down"></i></p>
+                   <ul class="hiden">
+                        <li><input name="sort" type="radio" value="data"> Data</li>
+                        <li><input name="sort" type="radio" value="name"> Name</li>
+                   </ul>
+                   <br>
+                  </div>
+              </div>
+               <div class="style_accordion">
+               <%= render 'form' %>
+<%= link_to 'add note', new_note_path, class: 'btn btn-info' %>
+              </div>
+            </div>
+
+
+
+

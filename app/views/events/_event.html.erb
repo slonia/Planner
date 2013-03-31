@@ -1,0 +1,30 @@
+
+<div class='well'>
+  <h2>
+    <%= @event.title %>
+  </h2>
+  <div>
+    <%= @event.description %>
+  </div>
+  <h4>
+    <%= @event.place %>
+  </h4>
+  <div>
+    <p>
+      From
+      <%= @event.started_at %>
+    </p>
+
+    <p>
+      To
+      <%= @event.finished_at %>
+    </p>
+    <p>
+  <b>Repeat:</b>
+  <%= @event.repeat %>
+</p>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

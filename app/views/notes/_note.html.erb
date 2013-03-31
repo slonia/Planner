@@ -1,0 +1,16 @@
+
+
+
+<li>
+  <div  id="note_<%= note.id %>">
+                  <%= link_to 'Destroy', note, method: :delete, remote: true, class: 'btn btn-danger btn-mini' %>
+                    <h2 class="n_title" onclick=tog('note',"<%= note.id %>")><%= note.title %></h2>
+                     <p class="n_text" onclick=tog('note',"<%= note.id %>")> <%= note.text %></p>
+                   </div>
+                     <div id="edit_note_<%= note.id %>">
+    <%= render 'notes/edit', note: note %>
+  </div>
+                </li>
+
+
+
