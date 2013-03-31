@@ -11,9 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery-ui
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrap-datetimepicker
 //= require jquery_nested_form
 //= require_tree .
 
@@ -26,6 +26,6 @@ function tog(obj, id)
   $('div[id^=edit_'+obj+'_'+id+']').show();
 }
 $(function() {
-  $("#event_started_at").datepicker();
-  $("#event_finished_at").datepicker();
+  $("#datetimepicker1").datetimepicker();
+  $("#datetimepicker2").datetimepicker();
 });
