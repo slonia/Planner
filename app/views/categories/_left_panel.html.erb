@@ -2,6 +2,7 @@
                <div class="group">
                 <h3><img class="float" src="assets/note.png"> Notes</h3>
                   <ul class="groups" id="cats">
+                    <li><%= link_to "All ("+@notes.count.to_s+")", categories_path %></li>
                     <%= render @categories %>
                   </ul>
                   <p class="sort">sort by <i class="icon-chevron-down"></i></p>

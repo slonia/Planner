@@ -25,7 +25,7 @@ class NotesController < ApplicationController
   # GET /notes/new.json
   def new
     @note = Note.new
-
+    @categories = Category.find_all_by_user_id(current_user.id)
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @note }
@@ -35,13 +35,14 @@ class NotesController < ApplicationController
   # GET /notes/1/edit
   def edit
     @note = Note.find(params[:id])
+    @categories = Category.find_all_by_user_id(current_user.id)
   end
 
   # POST /notes
   # POST /notes.json
   def create
     @note = Note.new(params[:note])
-
+    @categories = Category.find_all_by_user_id(current_user.id)
     respond_to do |format|
       if @note.save
         format.html { redirect_to categories_path, notice: 'Note was successfully created.' }
@@ -57,7 +58,7 @@ class NotesController < ApplicationController
   # PUT /notes/1.json
   def update
     @note = Note.find(params[:id])
-
+    @categories = Category.find_all_by_user_id(current_user.id)
     respond_to do |format|
       if @note.update_attributes(params[:note])
         format.html { redirect_to @note, notice: 'Note was successfully updated.' }

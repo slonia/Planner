@@ -3,8 +3,11 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.find_all_by_user_id(current_user.id)
+    @notes=[];
+    @categories.each do |cat|
+      @notes+=Note.find_all_by_category_id(cat.id)
+    end
     @category = Category.new
-    @note = Note.new
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @categories }
@@ -16,8 +19,9 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @notes = Note.find_all_by_category_id(@category.id)
+    @categories = Category.find_all_by_user_id(current_user.id)
     respond_to do |format|
-      format.js # show.html.erb
+      format.js
       format.json { render json: @category }
     end
   end

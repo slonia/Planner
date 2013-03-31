@@ -42,12 +42,17 @@
   <% end %>
 <% end %>
 
-<div class="navig span2" id='left_panel'>
-<%= yield :left%>
-</div>
-<div class="main span10" >
-<%= yield :main %>
-</div>
+<% if content_for?(:left) %>
+  <div class="navig" id='left_panel'>
+    <%= yield :left%>
+  </div>
+  <div class="main" >
+    <%= yield :main %>
+  </div>
+<% else %>
+  <%= yield %>
+<% end %>
+
 </div>
 </body>
 </html>

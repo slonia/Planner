@@ -321,3 +321,19 @@ html, body
   font-size: 11px;
   text-align: center;
 }
+.sticker form
+{
+  text-align: center;
+}
+.sticker input, .sticker textarea, .sticker select
+{
+  background-color: rgba(0,0,0,0);
+  border: none;
+  max-width: 150px;
+
+}
+.sticker textarea
+{
+  max-height: 150px;
+}
+

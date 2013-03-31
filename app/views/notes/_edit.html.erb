@@ -1,6 +1,7 @@
 <%= simple_form_for(note, remote: true) do |f| %>
-  <%= f.input :title, label: false %>
-  <%= f.input :text, label: false %>
-  <%= f.input :category_id, value: note.category_id, label: false %>
-  <%= f.button :submit %>
+  <%= f.input :title, label: false%>
+    <%= f.input :text, label: false%>
+     <%= f.select :category_id,
+     options_from_collection_for_select(@categories, 'id', 'name', selected: note.category_id) %>
+    <%= f.button :submit %>
 <% end %>

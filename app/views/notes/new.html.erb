@@ -1,6 +1,7 @@
-<%= simple_form_for(@note) do |f| %>
-  <%= f.input :title%>
-  <%= f.input :text%>
-  <%= f.input :category_id %>
-  <%= f.button :submit %>
-<% end %>
+  <%= simple_form_for(@note) do |f| %>
+    <%= f.input :title%>
+    <%= f.input :text%>
+     <%= f.select :category_id,
+     options_from_collection_for_select(@categories, 'id', 'name', selected: @note.category_id) %>
+    <%= f.button :submit %>
+  <% end %>

@@ -19,6 +19,8 @@
 
 function tog(obj, id)
 {
+  $('div[id^='+obj+']').show();
   $('div[id^='+obj+'_'+id+']').hide();
+  $('div[id^=edit_'+obj+']').hide();
   $('div[id^=edit_'+obj+'_'+id+']').show();
 }
