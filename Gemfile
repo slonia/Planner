@@ -25,7 +25,7 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'nested_form'
-gem "simple_calendar"
+gem "watu_table_builder", :require => "table_builder"
 
 gem 'devise'
 gem 'omniauth'

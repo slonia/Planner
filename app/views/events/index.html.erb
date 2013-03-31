@@ -1,22 +1,37 @@
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2" id="left_panel">
-      <ul>All events:
+<div class="navig" id='left_panel'>
+  <div class="style_accordion">
+               <div class="group">
+<ul>All events:
       <% @events.each do |event| %>
       <li><%= link_to event.title, event, remote: true %></li>
       <% end %>
 
     </ul>
-    </div>
-    <div class="span10" id="main_panel">
-      <div id="calendar_div">
-    <%= calendar @events, :start_day => :monday do |event| %>
-      <div><%= link_to event.title, event, remote: true %></div>
+</div>
+</div>
+</div>
+<div class="main" id="main_panel">
+  <div id="calendar">
+    <h2 id="month">
+      <%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m") %>
+      <%=h @date.strftime("%B %Y") %>
+      <%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m") %>
+    </h2>
+  <%= calendar_for @events, :year => @date.year, :month => @date.month, :first_day_of_week => 1 do |calendar| %>
+    <%= calendar.head('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday') %>
+    <% calendar.day(:day_method => :started_at) do |date, events| %>
+      <%= date.day %>
+      <ul>
+        <% for event in events %>
+          <li><%= link_to event.title, event, remote: true %></li>
+        <% end %>
+      </ul>
     <% end %>
-    </div>
-    <%= link_to 'New Event', new_event_path %>
+  <% end %>
+</div>
+
+    <%= link_to 'New Event', new_event_path, class: 'btn' %>
     <div id="current_event">
     </div>
-    </div>
+
   </div>
-</div>
