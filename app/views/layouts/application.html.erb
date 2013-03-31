@@ -8,7 +8,6 @@
 </head>
 <body>
  <div class="cont">
-<header>
      <div class="navbar navbar-inverse">
         <div class="navbar-inner">
            <div class="container">
@@ -34,8 +33,6 @@
            </div>
         </div>
       </div>
-    </header>
-<section>
   <% [:notice, :error, :alert, :success].each do |level| %>
   <% unless flash[level].blank? %>
     <div class="<%= flash_class(level) %>">
@@ -44,8 +41,13 @@
     </div>
   <% end %>
 <% end %>
-<%= yield %>
-</section>
+
+<div class="navig span2" id='left_panel'>
+<%= yield :left%>
+</div>
+<div class="main span10" >
+<%= yield :main %>
+</div>
 </div>
 </body>
 </html>

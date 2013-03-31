@@ -1,4 +1,4 @@
-<div class="navig" id='left_panel'>
+<%= content_for :left do %>
   <div class="style_accordion">
                <div class="group">
 <ul>All events:
@@ -9,8 +9,8 @@
     </ul>
 </div>
 </div>
-</div>
-<div class="main" id="main_panel">
+<% end %>
+<%= content_for :main do %>
   <div id="calendar">
     <h2 id="month">
       <%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m") %>
@@ -34,4 +34,4 @@
     <div id="current_event">
     </div>
 
-  </div>
+ <% end %>

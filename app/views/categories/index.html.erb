@@ -1,11 +1,12 @@
-<div class="navig" id='left_panel'>
+  <%= content_for :left do %>
 <%= render 'left_panel' %>
-</div>
-         <div class="main" >
+  <%end %>
+         <%= content_for :main do %>
           <div class="sticker">
             <ul id="main_panel">
             </ul>
           </div>
-        </div>
+          <% end %>
+
 
 

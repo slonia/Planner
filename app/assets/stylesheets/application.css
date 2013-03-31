@@ -21,6 +21,11 @@ html, body
     font-family:Helvetica, Arial, sans-serif;
     background: url('/assets/images3.PNG');
 }
+.cont
+{
+  margin: 0 auto;
+  width: 100%;
+}
 .color{
     background:rgba(244, 240, 240, 0.5);
     width:30%
@@ -29,7 +34,7 @@ html, body
     float:left;
     margin-left:10px;
     width:17%;
-    min-width:200px;
+    max-width:200px;
 }
 .navig_1{
     float:left;
@@ -191,7 +196,9 @@ html, body
     color:#082f64;
 }
 .main{
-    min-width:100px;
+
+    float: left;
+    width: auto;
 }
 @media (max-width: 930px){
 
@@ -253,7 +260,10 @@ html, body
     max-height: 200px;
 }
 
-
+#calendar
+{
+  width: auto;
+}
 #calendar td,
 #calendar th {
   font-family: "Lucida Grande",arial,helvetica,sans-serif;
