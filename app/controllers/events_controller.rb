@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
+  before_filter :authenticate_user!
   def index
-    @events = Event.all
+    @events = Event.order(:started_at)
     @date = params[:month] ? Date.strptime(params[:month],"%Y-%m") : Date.today
     respond_to do |format|
       format.html # index.html.erb
